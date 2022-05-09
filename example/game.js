@@ -1,5 +1,5 @@
-import { createRBTree } from "./example/rbtree.js";
-import { broadPhase } from "./example/kdtree.js"
+import { createRBTree } from "./rbtree.js";
+import { broadPhase } from "./kdtree.js"
 
 const Game = {
     WIDTH: 1080,

@@ -1,4 +1,4 @@
-import { Game, GameObject } from './example/game.js'
+import { Game, GameObject } from './game.js'
 
 /*
 to-do:
