@@ -86,12 +86,12 @@ class Player extends GameObject {
 
     onMouse(e) {
         if (e === "is-pressed" && this.timer === 0) {
+            const v = p5.Vector.sub(Game.mousePos, this.pos).setMag(12)
             // 커서 방향으로 파란색 네모 발사; 속력 12
-            Game.register(new Bullet('player',
-                this.pos.copy(),
-                p5.Vector.sub(Game.mousePos, this.pos).setMag(12)
-            ));
-            this.timer = 30;
+            Game.register(new Bullet('player', this.pos.copy(), v));
+            Game.register(new Bullet('player', this.pos.copy(), v.rotate(PI/2)));
+            Game.register(new Bullet('player', this.pos.copy(), v.rotate(-PI/2)));
+            this.timer = 24;
         }
     }
 
@@ -177,7 +177,7 @@ class Enemy extends GameObject {
     }
 
     draw() {
-        stroke("#FFA000"); fill("#FFA000"); strokeWeight(1);
+        stroke("#FFC0CB"); fill("#FFC0CB"); strokeWeight(1);
         rectMode(CENTER);
         rotate(this.innerAngle);
         rect(0, 0, 16, 16);
