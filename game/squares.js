@@ -89,8 +89,8 @@ class Player extends GameObject {
             const v = p5.Vector.sub(Game.mousePos, this.pos).setMag(12)
             // 커서 방향으로 파란색 네모 발사; 속력 12
             Game.register(new Bullet('player', this.pos.copy(), v));
-            Game.register(new Bullet('player', this.pos.copy(), v.copy().rotate(PI/2)));
-            Game.register(new Bullet('player', this.pos.copy(), v.copy().rotate(-PI/2)));
+            Game.register(new Bullet('player', this.pos.copy(), v.copy().rotate(PI/4)));
+            Game.register(new Bullet('player', this.pos.copy(), v.copy().rotate(-PI/4)));
             this.timer = 24;
         }
     }
